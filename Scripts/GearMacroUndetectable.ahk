@@ -10,7 +10,7 @@ StartVar := 0
      Loop {
 
 	     Loop {
-			 SleepVar := Random(299000, 310000)
+			 SleepVar := Random(595000, 605000)
 		     Sleep SleepVar
 		     RobloxCount := WinGetCount("Roblox")
 	         Loop {
