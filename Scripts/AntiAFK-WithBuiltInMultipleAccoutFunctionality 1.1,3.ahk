@@ -19,8 +19,8 @@ StartVar := 0
 				WinActivateBottom "Roblox", , "Roblox Account Manager"
 				if (RobloxCount = 0)
 				{
-					break
 					MsgBox "Error 404; While trying to locate Roblox: Roblox not found during the read of the program"
+					break
 				}
 				else
 					{
