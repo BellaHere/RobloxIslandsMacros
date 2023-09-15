@@ -4,8 +4,8 @@ InstallKeybdHook "1"
 StartVar := 0
 ^s::
 {
-	Label1:
 	MsgBox "Macro Started"
+	Label1:
 	StartVar:=1
 	if StartVar = 1
 	{
