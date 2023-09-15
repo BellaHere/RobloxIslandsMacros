@@ -32,7 +32,9 @@ StartVar := 0
 								}
 						}
 				}
-				Label2:
+				else
+				{
+					Label2:
 					WinActivateBottom "Roblox", , "Roblox Account Manager"
 					sleep 5
 					Loop 3
@@ -43,6 +45,7 @@ StartVar := 0
 					}
 				RobloxCount--
 				;
+				}
 			}
 		}
 	}
