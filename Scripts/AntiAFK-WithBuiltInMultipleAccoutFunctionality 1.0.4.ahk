@@ -7,7 +7,6 @@ StartVar := 0
 	MsgBox "Macro Started"
 	StartVar:=1
 	if StartVar = 1
-	Loop
 	{
 		Loop
 		{
@@ -35,6 +34,11 @@ StartVar := 0
 					}
 			}
 		}
+	}
+	else
+	{
+		MsgBox "Error 1; Error with StartVar: StartVar was not equal to 1. Please press OK and relaunch the program. If Error 1 persistsm, report this to Discord user bellawashere"
+		ExitApp
 	}
 }
 ^x::
