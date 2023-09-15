@@ -11,7 +11,7 @@ StartVar := 0
 	{
 		Loop
 		{
-			SleepVar := Random(595000, 605000)
+			SleepVar := Random(299000, 310000)
 			Sleep SleepVar
 			RobloxCount := WinGetCount("Roblox", , "Roblox Account Manager")
 			Loop
@@ -32,7 +32,9 @@ StartVar := 0
 								}
 						}
 				}
-				Label2:
+				else
+				{
+					Label2:
 					WinActivateBottom "Roblox", , "Roblox Account Manager"
 					sleep 5
 					Loop 3
@@ -43,6 +45,7 @@ StartVar := 0
 					}
 				RobloxCount--
 				;
+				}
 			}
 		}
 	}
