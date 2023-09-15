@@ -16,7 +16,7 @@ StartVar := 0
 			RobloxCount := WinGetCount("Roblox", , "Roblox Account Manager")
 			Loop
 			{
-				if (RobloxCount = 0)
+				if RobloxCount = 0
 				{
 					MsgBox "Error 404; While trying to locate Roblox: Roblox not found during the read of the program"
 					while RobloxCount = 0
