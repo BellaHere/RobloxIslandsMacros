@@ -25,8 +25,7 @@ MsgBox "To start the program, press Control S. To exit the program, press Contro
 					{
 						MouseClick "Right", 128, 128, 5
 						sleep 15
-						SendInput "{/ 3}"
-						SendInput "{BS 3}"
+						SendInput "{Esc 4}"
 					}
 					--RobloxCount
 				}
