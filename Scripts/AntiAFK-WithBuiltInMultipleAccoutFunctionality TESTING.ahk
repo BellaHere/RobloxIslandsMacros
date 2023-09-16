@@ -24,8 +24,7 @@ StartVar := 0
 					{
 						MouseClick "Right", 128, 128, 5
 						sleep 15
-						SendInput "{/ 3}"
-						SendInput "{BS 3}"
+						SendInput "{Esc 4}"
 					}
 					--RobloxCount
 				}
