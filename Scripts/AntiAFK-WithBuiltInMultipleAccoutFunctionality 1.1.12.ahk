@@ -2,6 +2,7 @@
 #WinActivateForce
 InstallKeybdHook "1"
 StartVar := 0
+MsgBox "To start the program, press Control S. To exit the program, press Control X."
 ^s::
 {
 	MsgBox "Macro Started"
