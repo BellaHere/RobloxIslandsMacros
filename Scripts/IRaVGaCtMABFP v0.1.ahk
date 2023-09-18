@@ -12,7 +12,8 @@ UnusedCodeWithPossibleLaterUsage.Add("DropDownList", "vWeaponStyle", ["Melee","M
 IRaVGaCtMABFPGui := Gui()
 
 IRaVGaCtMABFPGui.BackColor := "000000"
-IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial")
+IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
 IRaVGaCtMABFPGui.Opt("-DPIScale")
 Tab := IRaVGaCtMABFPGui.Add("Tab", "w700", ["View", "Program Settings", "Islands Settings"])
 
@@ -37,11 +38,30 @@ IRaVGaCtMABFPGui.Add("Text",, "Choose your own font thickness using this up and 
 
 Tab.UseTab(3)
 IRaVGaCtMABFPGui.Add("Text",, "Please select your bow slot. (Range = 1 to 8)")
+
+IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABFPGui.Add("Edit")
 IRaVGaCtMABFPGui.Add("UpDown", "vBow Range1-8", 1)
+
+IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
 IRaVGaCtMABFPGui.Add("Text",, "Please select your weapon to swap to. (Range = 1 to 8)")
+
+IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABFPGui.Add("Edit")
 IRaVGaCtMABFPGui.Add("UpDown", "vSwapWeapon Range1-8", 1)
 
+IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+IRaVGaCtMABFPGui.Add("Text",, "Please select your Blueberry Cookie slot. (Range = 1 to 8)")
+
+IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABFPGui.Add("Edit")
+IRaVGaCtMABFPGui.Add("UpDown", "vBlueberryCookies Range1-8", 1)
+
+IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+IRaVGaCtMABFPGui.Add("Text",, "Please select your Dragon Roll slot. (Range = 1 to 8)")
+
+IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABFPGui.Add("Edit")
+IRaVGaCtMABFPGui.Add("UpDown", "vDragonRolls Range1-8", 1)
 
 IRaVGaCtMABFPGui.Show("AutoSize Center Restore")
