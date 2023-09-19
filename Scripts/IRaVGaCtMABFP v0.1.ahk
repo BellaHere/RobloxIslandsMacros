@@ -64,4 +64,11 @@ IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABFPGui.Add("Edit")
 IRaVGaCtMABFPGui.Add("UpDown", "vDragonRolls Range1-8", 1)
 
+IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+IRaVGaCtMABFPGui.Add("Text",, "Please select your Starfruit Cake slot. (Range = 1 to 8)")
+
+IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABFPGui.Add("Edit")
+IRaVGaCtMABFPGui.Add("UpDown", "vSFCake Range 1-8" 1)
+
 IRaVGaCtMABFPGui.Show("AutoSize Center Restore")
