@@ -1,87 +1,119 @@
 #Requires AutoHotkey v2.0
-MsgBox "Before running this we kindly ask that you press OK out of privacy reasons.", "IRaVGaCtMABFP"
-
-; This is unused code and may or may not be used in the future, do not pay attention to it.
+MsgBox "Before running this we kindly ask that you press OK out of privacy reasons.", "IRaVGaCtMABF"
+; Unused Code here
 UnusedCodeWithPossibleLaterUsage := Gui()
+; Code that may be able to be used if the devs ever wise up and make a fix
 UnusedCodeWithPossibleLaterUsage.Add("Text",, "Please select your weapon's attack methodology")
 UnusedCodeWithPossibleLaterUsage.Add("DropDownList", "vWeaponStyle", ["Melee","Magic","Archery"])
 
+; Yes this belongs to the previous group.
+UnusedCodeWithPossibleLaterUsage.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+UnusedCodeWithPossibleLaterUsage.Add("Text",, "Please select your Healing Food slot. (Range = 1 to 8) (To disable, set to 0)")
+UnusedCodeWithPossibleLaterUsage.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+UnusedCodeWithPossibleLaterUsage.Add("Edit")
+heart := UnusedCodeWithPossibleLaterUsage.Add("UpDown", "vHeart Range0-8", 1)
+
+; Here for somepoint later
+UnusedCodeWithPossibleLaterUsage.Add("Progress", "w200 h20 cGreen vActivityBar", 0)
+UnusedCodeWithPossibleLaterUsage["ActivityBar"].Value := 50  ; Set the current position to 50.
+UnusedCodeWithPossibleLaterUsage.Add("Text",, "Choose your own font color using hexadecimal inputs.")
+UnusedCodeWithPossibleLaterUsage.Add("Text",, "Choose your own font size using this up and down arrow. (Range is 10-20)")
+UnusedCodeWithPossibleLaterUsage.Add("Text",, "Choose your own font thickness using this up and down arrow. (Range is 100-1000)")
+
+; Used Code
+
+IRaVGaCtMABF := Gui()
+gayColor1 := "000000"
+gayStuff1 := "c000000 s12 w500 q5"
+gayStuff2 := "cC0FFEE s12 w500 q5"
+gayStuff3 := "Arial"
+gayOpt1 := "-DPIScale"
+gayOpt2 := "AutoSize Center Restore"
+gayCountBA := 1
+gayCountBB := 2
+gayCountBC := 3
+gayCountBD := 4
+
+
+IRaVGaCtMABF.BackColor := gayColor1
+IRaVGaCtMABF.SetFont(gayStuff1, gayStuff3) ; BackupFont
+IRaVGaCtMABF.SetFont(gayStuff2, gayStuff3) ; DefaultFont
+
+
+IRaVGaCtMABF.Opt(gayOpt1)
+tab := IRaVGaCtMABF.Add("Tab", "h800 w700", ["View", "Program Settings", "Islands Settings"])
+
+
+tab.UseTab(2)
+
+IRaVGaCtMABF.Add("Text",, "Please select a hotkey for starting the program.")
+StartKey := IRaVGaCtMABF.Add("Hotkey", "vStartKey")
+SK := StartKey.Value
+IRaVGaCtMABF.Add("Text",, "Please select a hotkey for stopping the program.")
+ExitKey := IRaVGaCtMABF.Add("Hotkey", "vExitKey")
+EK := ExitKey.Value
+
+tab.UseTab(3)
+
+IRaVGaCtMABF.Add("Text",, "Please select your Bow slot. (Range 1-8)")
+
+IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABF.Add("Edit")
+bow := IRaVGaCtMABF.Add("UpDown", "vBow Range1-8", 1)
+B := bow.Value
+
+IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+IRaVGaCtMABF.Add("Text",, "Please select your Swap Sword slot. (Range 1-8) (To disable, set to 0)")
+
+IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABF.Add("Edit")
+swapsword := IRaVGaCtMABF.Add("UpDown", "vSwapSword Range0-8", 1)
+SS := swapsword.Value
+
+IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+IRaVGaCtMABF.Add("Text",, "Please select your Blueberry Cookie slot. (Range 1-8) (To disable, set to 0)")
+
+IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABF.Add("Edit")
+blueberrycookie := IRaVGaCtMABF.Add("UpDown", "vBlueberryCookie Range0-8", 1)
+BC:= blueberrycookie.Value
+
+IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+IRaVGaCtMABF.Add("Text",, "Please select your Dragon Roll slot. (Range 1-8) (To disable, set to 0)")
+
+IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABF.Add("Edit")
+dragonroll := IRaVGaCtMABF.Add("UpDown", "vDragonRoll Range0-8", 1)
+DR := dragonroll.Value
+
+IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+IRaVGaCtMABF.Add("Text",, "Please select your Starfruit Cake slot. (Range 1-8) (To disable, set to 0)")
+
+IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABF.Add("Edit")
+starfruitcake := IRaVGaCtMABF.Add("UpDown", "vStarfruitCake Range0-8", 1)
+SFC := starfruitcake.Value
+
+IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
+IRaVGaCtMABF.Add("Text",, "Please select your Jam Sandwich slot. (Range 1-8) (To disable, set to 0)")
+
+IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+IRaVGaCtMABF.Add("Edit")
+jamsandwich  := IRaVGaCtMABF.Add("UpDown", "vJamSandwich Range0-8", 1)
+JS := jamsandwich.Value
+
+tab.UseTab(1)
+
+IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial")
+IRaVGaCtMABF.Add("Text",, "Program Activity Bar")
+IRaVGaCtMABF.Add("Progress", "w200 h20 c99ff99 vActivityBar", 0)
+IRaVGaCtMABF.Add("Text",, "Your selected Start Key")
+IRaVGaCtMABF.Add("Text",, SK)
+IRaVGaCtMABF.Add("Text",, "Your selected Exit Key")
+IRaVGaCtMABF.Add("Text",, EK)
+IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
+Button := IRaVGaCtMABF.Add("Button", "w80", "START")
 
 
 
-IRaVGaCtMABFPGui := Gui()
-
-IRaVGaCtMABFPGui.BackColor := "000000"
-IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
-IRaVGaCtMABFPGui.Opt("-DPIScale")
-Tab := IRaVGaCtMABFPGui.Add("Tab", "w700", ["View", "Program Settings", "Islands Settings"])
-
-
-Tab.UseTab(1)
-IRaVGaCtMABFPGui.Add("Text",, "Program Activity Bar")
-IRaVGaCtMABFPGui.Add("Progress", "w200 h20 cGreen vMyProgress", 0)
-IRaVGaCtMABFPGui.Add("Text",, "Your selected Start Key")
-IRaVGaCtMABFPGui.Add("Text",, "")
-IRaVGaCtMABFPGui.Add("Text",, "Your selected Exit Key")
-IRaVGaCtMABFPGui.Add("Text",, "")
-
-
-Tab.UseTab(2)
-IRaVGaCtMABFPGui.Add("Text",, "Please select a hotkey for starting the program.")
-IRaVGaCtMABFPGui.Add("Hotkey", "vStartKey")
-IRaVGaCtMABFPGui.Add("Text",, "Please select a hotkey for stopping the program.")
-IRaVGaCtMABFPGui.Add("Hotkey", "vExitKey")
-IRaVGaCtMABFPGui.Add("Text",, "Choose your own font color using hexadecimal inputs.")
-IRaVGaCtMABFPGui.Add("Text",, "Choose your own font size using this up and down arrow. (Range is 10-20)")
-IRaVGaCtMABFPGui.Add("Text",, "Choose your own font thickness using this up and down arrow. (Range is 100-1000)")
-
-Tab.UseTab(3)
-IRaVGaCtMABFPGui.Add("Text",, "Please select your bow slot. (Range = 1 to 8)")
-
-IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-IRaVGaCtMABFPGui.Add("Edit")
-IRaVGaCtMABFPGui.Add("UpDown", "vBow Range1-8", 1)
-
-IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
-IRaVGaCtMABFPGui.Add("Text",, "Please select your weapon to swap to. (Range = 1 to 8)")
-
-IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-IRaVGaCtMABFPGui.Add("Edit")
-IRaVGaCtMABFPGui.Add("UpDown", "vSwapWeapon Range1-8", 1)
-
-IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
-IRaVGaCtMABFPGui.Add("Text",, "Please select your Blueberry Cookie slot. (Range = 1 to 8)")
-
-IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-IRaVGaCtMABFPGui.Add("Edit")
-IRaVGaCtMABFPGui.Add("UpDown", "vBlueberryCookies Range1-8", 1)
-
-IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
-IRaVGaCtMABFPGui.Add("Text",, "Please select your Dragon Roll slot. (Range = 1 to 8)")
-
-IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-IRaVGaCtMABFPGui.Add("Edit")
-IRaVGaCtMABFPGui.Add("UpDown", "vDragonRolls Range1-8", 1)
-
-IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
-IRaVGaCtMABFPGui.Add("Text",, "Please select your Starfruit Cake slot. (Range = 1 to 8)")
-
-IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-IRaVGaCtMABFPGui.Add("Edit")
-IRaVGaCtMABFPGui.Add("UpDown", "vSFCake Range 1-8" 1)
-
-IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
-IRaVGaCtMABFPGui.Add("Text",, "Please select your Jam Sandwich slot. (Range = 1 to 8)")
-
-IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-IRaVGaCtMABFPGui.Add("Edit")
-IRaVGaCtMABFPGui.Add("UpDown", "vJamSandwich Range 1-8" 1)
-
-IRaVGaCtMABFPGui.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
-IRaVGaCtMABFPGui.Add("Text",, "Please select your Healing Food slot. (Range = 1 to 8)")
-
-IRaVGaCtMABFPGui.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-IRaVGaCtMABFPGui.Add("Edit")
-IRaVGaCtMABFPGui.Add("UpDown", "vHeal Range 1-8" 1)
-IRaVGaCtMABFPGui.Show("AutoSize Center Restore")
+IRaVGaCtMABF.Show("AutoSize Center Restore")
