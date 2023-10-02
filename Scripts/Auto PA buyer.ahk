@@ -2,6 +2,7 @@
 StartVariable := 0
 ^S::
 {
+	StartVariable := 1
 	while StartVariable = 1
 	{
 		WinMove(0, 0, 256, 256, "Roblox Account Manager", , ,)
