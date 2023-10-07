@@ -5,7 +5,7 @@ StartVariable := 0
 	StartVariable := 1
 	while StartVariable = 1
 	{
-		WinMove(0, 0, 256, 256, "Roblox Account Manager", , ,)
+		WinMove(501, 0, 500, 500, "Roblox Account Manager", , ,)
 		WinActivate("Roblox Account Manager)
 	}
 }
