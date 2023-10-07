@@ -21,37 +21,39 @@ UnusedCodeWithPossibleLaterUsage.Add("Text",, "Choose your own font size using t
 UnusedCodeWithPossibleLaterUsage.Add("Text",, "Choose your own font thickness using this up and down arrow. (Range is 100-1000)")
 
 ; Used Code
-
+; Frame Working, and basic variables.
 IRaVGaCtMABF := Gui()
+HahaFunnyGay := 0
+gay1 := IRaVGaCtMABF
+gay2 := gay1
 gayColor1 := "000000"
 gayStuff1 := "c000000 s12 w500 q5"
 gayStuff2 := "cC0FFEE s12 w500 q5"
 gayStuff3 := "Arial"
 gayOpt1 := "-DPIScale"
 gayOpt2 := "AutoSize Center Restore"
-gayCountBA := 1
-gayCountBB := 2
-gayCountBC := 3
-gayCountBD := 4
+gayCountNA := 1
+gayCountNB := 2
+gayCountNC := 3
+gayCountND := 4
 
 
 IRaVGaCtMABF.BackColor := gayColor1
 IRaVGaCtMABF.SetFont(gayStuff1, gayStuff3) ; BackupFont
 IRaVGaCtMABF.SetFont(gayStuff2, gayStuff3) ; DefaultFont
 
-
 IRaVGaCtMABF.Opt(gayOpt1)
 tab := IRaVGaCtMABF.Add("Tab", "h800 w700", ["View", "Program Settings", "Islands Settings"])
-
 
 tab.UseTab(2)
 
 IRaVGaCtMABF.Add("Text",, "Please select a hotkey for starting the program.")
 StartKey := IRaVGaCtMABF.Add("Hotkey", "vStartKey")
-SK := StartKey.Value
+stk := StartKey.Value
+
 IRaVGaCtMABF.Add("Text",, "Please select a hotkey for stopping the program.")
 ExitKey := IRaVGaCtMABF.Add("Hotkey", "vExitKey")
-EK := ExitKey.Value
+exk := ExitKey.Value
 
 tab.UseTab(3)
 
@@ -60,7 +62,7 @@ IRaVGaCtMABF.Add("Text",, "Please select your Bow slot. (Range 1-8)")
 IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABF.Add("Edit")
 bow := IRaVGaCtMABF.Add("UpDown", "vBow Range1-8", 1)
-B := bow.Value
+bow.OnEvent("Change", SPoVC)
 
 IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
 IRaVGaCtMABF.Add("Text",, "Please select your Swap Sword slot. (Range 1-8) (To disable, set to 0)")
@@ -68,7 +70,7 @@ IRaVGaCtMABF.Add("Text",, "Please select your Swap Sword slot. (Range 1-8) (To d
 IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABF.Add("Edit")
 swapsword := IRaVGaCtMABF.Add("UpDown", "vSwapSword Range0-8", 1)
-SS := swapsword.Value
+swapsword.OnEvent("Change", SPoVC)
 
 IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
 IRaVGaCtMABF.Add("Text",, "Please select your Blueberry Cookie slot. (Range 1-8) (To disable, set to 0)")
@@ -76,7 +78,7 @@ IRaVGaCtMABF.Add("Text",, "Please select your Blueberry Cookie slot. (Range 1-8)
 IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABF.Add("Edit")
 blueberrycookie := IRaVGaCtMABF.Add("UpDown", "vBlueberryCookie Range0-8", 1)
-BC:= blueberrycookie.Value
+blueberrycookie.OnEvent("Change", SPoVC)
 
 IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
 IRaVGaCtMABF.Add("Text",, "Please select your Dragon Roll slot. (Range 1-8) (To disable, set to 0)")
@@ -84,7 +86,7 @@ IRaVGaCtMABF.Add("Text",, "Please select your Dragon Roll slot. (Range 1-8) (To 
 IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABF.Add("Edit")
 dragonroll := IRaVGaCtMABF.Add("UpDown", "vDragonRoll Range0-8", 1)
-DR := dragonroll.Value
+dragonroll.OnEvent("Change", SPoVC)
 
 IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
 IRaVGaCtMABF.Add("Text",, "Please select your Starfruit Cake slot. (Range 1-8) (To disable, set to 0)")
@@ -92,7 +94,7 @@ IRaVGaCtMABF.Add("Text",, "Please select your Starfruit Cake slot. (Range 1-8) (
 IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABF.Add("Edit")
 starfruitcake := IRaVGaCtMABF.Add("UpDown", "vStarfruitCake Range0-8", 1)
-SFC := starfruitcake.Value
+starfruitcake.OnEvent("Change", SPoVC)
 
 IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial") ; DefaultFont
 IRaVGaCtMABF.Add("Text",, "Please select your Jam Sandwich slot. (Range 1-8) (To disable, set to 0)")
@@ -100,20 +102,60 @@ IRaVGaCtMABF.Add("Text",, "Please select your Jam Sandwich slot. (Range 1-8) (To
 IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
 IRaVGaCtMABF.Add("Edit")
 jamsandwich  := IRaVGaCtMABF.Add("UpDown", "vJamSandwich Range0-8", 1)
-JS := jamsandwich.Value
+jamsandwich.OnEvent("Change", SPoVC)
 
 tab.UseTab(1)
 
 IRaVGaCtMABF.SetFont("cC0FFEE s12 w500 q5", "Arial")
 IRaVGaCtMABF.Add("Text",, "Program Activity Bar")
 IRaVGaCtMABF.Add("Progress", "w200 h20 c99ff99 vActivityBar", 0)
-IRaVGaCtMABF.Add("Text",, "Your selected Start Key")
-IRaVGaCtMABF.Add("Text",, SK)
-IRaVGaCtMABF.Add("Text",, "Your selected Exit Key")
-IRaVGaCtMABF.Add("Text",, EK)
+
 IRaVGaCtMABF.SetFont("c000000 s12 w500 q5", "Arial") ; BackupFont
-Button := IRaVGaCtMABF.Add("Button", "w80", "START")
+StartButton := IRaVGaCtMABF.Add("Button", "w80", "START")
+StartButton.OnEvent("Click", SPoVC)
 
+StopButton := IRaVGaCtMABF.Add("Button", "w80", "STOP")
+StopButton.OnEvent("Click", EP)
 
+; Variables I could only declare now.
+B := bow.Value
+SS := swapsword.Value
+BC := blueberrycookie.Value
+DR := dragonroll.Value
+SC := starfruitcake.Value
+JS := jamsandwich.Value
 
 IRaVGaCtMABF.Show("AutoSize Center Restore")
+
+^S::
+SPoVC(*)
+{
+    B := bow.Value
+    SS := swapsword.Value
+    BC := blueberrycookie.Value
+    DR := dragonroll.Value
+    SC := starfruitcake.Value
+    JS := jamsandwich.Value
+    SK := stk
+    EK := exk
+    loop 100
+    {
+        sleep 1
+        IRaVGaCtMABF["ActivityBar"].Value += 1
+    }
+    loop
+    {
+        WinMove(0, 0, 500, 500, "Roblox", , "Roblox Account Manager", )
+    }
+}
+
+^X::
+EP(*)
+{
+    loop 200
+    {
+        sleep 1
+        IRaVGaCtMABF["ActivityBar"].Value -= 0.5
+    }
+    ExitApp
+}
