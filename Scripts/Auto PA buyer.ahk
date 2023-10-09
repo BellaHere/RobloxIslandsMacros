@@ -2,6 +2,7 @@
 CoordMode "Mouse", "Screen"
 CountingVariable := 1
 StartVariable := 0
+JoinCode = "{ENTER CODE}" ; PLEASE ENTER THE CODE HERE.
 ^S::
 {
 	MsgBox "Starting Now..."
@@ -38,25 +39,42 @@ StartVariable := 0
 			}
 			While CountingVariable > 4
 			{
-				Sleep 200
+				Sleep 30000
 				MouseMove 27, 249
 				Sleep 200
 				MouseClick "left", 27, 249, 1 ; Profile
-				Sleep 200
+				Sleep 500
 				MouseMove 97, 286
 				Sleep 200
 				MouseClick "left", 97, 286, 1 ; Change Profile
-				Sleep 200
+				Sleep 500
 				MouseMove 270, 227
 				Sleep 200
 				MouseClick "left", 270, 227, 1 ; Slot 1
 				Sleep 30000
+				MouseMove 26, 168
+				Sleep 200
+				MouseClick "left", 26, 168, 1 ; Explore
+				Sleep 500
+				MouseMove 67, 180
+				Sleep 200
+				MouseClick "left", 67, 180, 1 ; Online Islands
+				Sleep 500
+				MouseMove 233, 396
+				Sleep 200
+				MouseClick "left", 233, 396, 1 ; Join code
+				SendText JoinCode
+				Sleep 200
+				MouseMove 308, 389
+				Sleep 200
+				MouseClick "left", 308, 389, 3 ; Connect
+				Sleep 30000
 				SendInput "F"
-				Sleep 15000
+				Sleep 20000
 				MouseMove 629, 471
 				Sleep 200
 				MouseClick "left", 629, 471, 1 ; View Shop
-				Sleep 5000
+				Sleep 500
 				MouseMove 359, 147
 				Sleep 200
 				MouseClick "left", 359, 147, 1 ; Pineapple Seed
@@ -66,7 +84,7 @@ StartVariable := 0
 				MouseClick "left", 544, 432, 1 ; Manual Number Input
 				Sleep 200
 				MouseMove 588, 470
-				Sleep 200
+				Sleep 500
 				MouseClick "left", 588, 470, 1 ; ...
 				Sleep 200
 				SendInput "6"
@@ -84,11 +102,11 @@ StartVariable := 0
 				MouseMove 27, 249
 				Sleep 200
 				MouseClick "left", 27, 249, 1 ; Profile
-				Sleep 200
+				Sleep 500
 				MouseMove 97, 286
 				Sleep 200
 				MouseClick "left", 97, 286, 1 ; Change Profile
-				Sleep 200
+				Sleep 500
 				if CountingVariable = 2
 				{
 					MouseMove 352, 227
