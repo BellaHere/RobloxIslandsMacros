@@ -1,6 +1,7 @@
 #Requires AutoHotkey v2.0
 CoordMode "Mouse", "Screen"
 CountingVariable := 1
+LoopVariable := 36 ; PLEASE CHANGE AS NEEDED FOR AS MANY ACCOUNTS AS YOU PLAN ON USING.
 StartVariable := 0
 JoinCode = "{ENTER CODE}" ; PLEASE ENTER THE CODE HERE.
 ^S::
@@ -9,7 +10,7 @@ JoinCode = "{ENTER CODE}" ; PLEASE ENTER THE CODE HERE.
 	StartVariable := 1
 	While StartVariable = 1
 	{
-		loop 36
+		loop LoopVariable
 		{
 			CountVariable := 2
 			WinMove(501, 0, 500, 500, "Roblox Account Manager", , , )
